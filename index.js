@@ -10,7 +10,7 @@ var session = require('express-session');
 
 var mongoose = require('mongoose');
 mongoose.connect("mongodb+srv://sakadasariyaman5:man54545@cluster0.gtj0epe.mongodb.net/AdminPanel", {
-    useNewUrlPareser : true,
+    useNewUrlParser : true,
     useUnifiedTopology : true
 }).then(()=> {
     console.log("Db connected.");
