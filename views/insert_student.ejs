@@ -1,0 +1,91 @@
+<%- include('header') %>
+
+<section class="pcoded-main-container p-5">
+    <div >
+        <!-- [ breadcrumb ] start -->
+     
+        <div class="row">
+            <div class="col-lg-12">
+                <form action="/student/addStudentData" enctype="multipart/form-data" method="post">
+                    <div class="form-floating d-flex align-items-center">
+                        <label class="floatingInput mb-0" style="margin-right: 20px;">Enter Your Name :-</label>
+                        <input type="text" class="form-control border-0" style="box-shadow: none; width: 30%;" placeholder="Name" name="name">
+                    </div><br>
+                    <div class="form-floating d-flex align-items-center">
+                        <label class="floatingInput mb-0" style="margin-right: 20px;">Enter Your Father Name :-</label>
+                        <input type="text" class="form-control border-0" style="box-shadow: none; width: 30%;" placeholder="Father Name" name="fathername">
+                    </div><br>
+                    <div class="form-floating d-flex align-items-center">
+                        <label class="floatingInput mb-0" style="margin-right: 20px;">Enter Your Mother Name :-</label>
+                        <input type="text" class="form-control border-0" style="box-shadow: none; width: 30%;" placeholder="Mother Name" name="mothername">
+                    </div><br>
+                    <div class="form-floating d-flex align-items-center">
+                        <label class="floatingInput mb-0" style="margin-right: 20px;">Select Your Gender :-</label>
+                        <input type="radio" name="gender" value="male">Male
+                        <input type="radio" name="gender" value="female">Female
+                    </div><br>
+                    <div class="form-floating d-flex align-items-center">
+                        <label class="floatingInput mb-0" style="margin-right: 20px;">Select Your Date of Birth :-</label>
+                        <input type="date" class="form-control border-0" style="box-shadow: none; width: 30%;" name="dob">
+                    </div><br>
+                    <div class="form-floating d-flex align-items-center">
+                        <label class="floatingInput mb-0" style="margin-right: 20px;">Enter Your Email :-</label>
+                        <input type="email" class="form-control border-0" style="box-shadow: none; width: 30%;" placeholder="E-mail" name="email">
+                    </div><br>
+                    <div class="form-floating d-flex align-items-center">
+                        <label class="floatingInput mb-0" style="margin-right: 20px;">Enter Your Phone :-</label>
+                        <input type="tel" class="form-control border-0" style="box-shadow: none; width: 30%;" placeholder="Phone" name="phone">
+                    </div><br>
+                    <div class="form-floating d-flex align-items-center">
+                        <label class="floatingInput mb-0" style="margin-right: 20px;">Enter Your Address :-</label>
+                        <textarea class="form-control border-0" style="box-shadow: none; width: 30%;" placeholder="Address" rows="5" name="address"></textarea>
+                    </div><br>
+                    <div class="form-floating d-flex align-items-center">
+                        <label class="floatingInput mb-0" style="margin-right: 20px;">Select Your Department :-</label>
+                        <select name="hodId" id="hodId" onchange="return teacherData()" class="form-control" style="box-shadow: none; width: 30%;">
+                            <option value="">-- Select Your Department -- </option>
+                            <% for(var v of hod) { %>
+                            <option value="<%= v.id %>"><%= v.department %></option>
+                            <% } %>
+                        </select>
+                    </div><br>
+                    <div class="form-floating d-flex align-items-center">
+                        <label class="floatingInput mb-0" style="margin-right: 20px;">Select Your Class Teacher :-</label>
+                        <select name="teacherId" id="teacherId" class="form-control" style="box-shadow: none; width: 30%;">
+                            <option value="">-- Select Your Class Teacher -- </option>
+                            
+                        </select>
+                    </div><br>
+                    <div class="form-floating d-flex align-items-center">
+                        <label class="floatingInput mb-0" style="margin-right: 20px;">Enter Your 12th Percentage :-</label>
+                        <input type="text" class="form-control border-0" style="box-shadow: none; width: 30%;" name="per" placeholder="12th Percentage">
+                    </div><br>
+                    <div class="form-floating d-flex align-items-center">
+                        <label class="floatingInput mb-0" style="margin-right: 20px;">Select Your Avatar :-</label>
+                        <input type="file" class="form-control border-0" style="box-shadow: none; width: 30%;" placeholder="Avatar" name="avatar">
+                    </div><br>
+                    <input type="submit" value="Submit" class="btn btn-primary px-4">
+                </form>
+            </div>
+        </div>
+        <!-- [ Main Content ] end -->
+
+    </div>
+</section>
+<script>
+    function teacherData(){
+        var hodId = document.getElementById('hodId').value;
+        $.ajax({
+            url : "/student/getTeacherData",
+            type : "post",
+            data : {
+                'hodId' : hodId
+            },
+            success : function(res){
+                $('#teacherId').html(res);
+            }
+        });
+    }
+</script>
+
+<%- include('footer') %>

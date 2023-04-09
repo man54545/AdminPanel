@@ -1,0 +1,122 @@
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/plugins/bootstrap.min.css">
+<link rel="stylesheet" href="/css/plugins/perfect-scrollbar.css">
+<link rel="stylesheet" href="/css/plugins/prism-coy.css">
+<link rel="stylesheet" href="/css/plugins/animate.min.css">
+
+<body>
+	<!-- [ Pre-loader ] start -->
+	<div class="loader-bg">
+		<div class="loader-track">
+			<div class="loader-fill"></div>
+		</div>
+	</div>
+	<!-- [ Pre-loader ] End -->
+	<!-- [ navigation menu ] start -->
+	<nav class="pcoded-navbar ">
+		<div class="navbar-wrapper ">
+			<div class="navbar-content" >
+			
+				
+				<ul class="nav pcoded-inner-navbar mt-3">
+
+					<li class="nav-item pcoded-menu-caption">
+						<label>Principal</label>
+					</li>
+					<li class="nav-item">
+						<a href="/principal/insertPrincipal" class="nav-link "><span class="pcoded-micon"><i class="feather icon-user"></i></span><span class="pcoded-mtext">Add Principal</span></a>
+					</li>
+					<li class="nav-item pcoded-hasmenu">
+						<a href="/principal/viewPrincipal" class="nav-link "><span class="pcoded-micon"><i class="feather icon-layout"></i></span><span class="pcoded-mtext">View Principal</span></a>
+					</li>
+
+					<li class="nav-item pcoded-menu-caption mt-0">
+						<label>HOD</label>
+					</li>
+					<li class="nav-item">
+						<a href="/hod/insertHod" class="nav-link "><span class="pcoded-micon"><i class="feather icon-user"></i></span><span class="pcoded-mtext">Add Hod</span></a>
+					</li>
+					<li class="nav-item pcoded-hasmenu">
+						<a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-layout"></i></span><span class="pcoded-mtext">View Hod</span></a>
+						<ul class="pcoded-submenu">
+							<li><a href="/hod/activeHod">Active HOD</a></li>
+							<li><a href="/hod/deactiveHod">Deactive HOD</a></li>
+						</ul>
+					</li>
+
+					<li class="nav-item pcoded-menu-caption mt-0">
+						<label>Teacher</label>
+					</li>
+					<li class="nav-item">
+						<a href="/teacher/insertTeacher" class="nav-link "><span class="pcoded-micon"><i class="feather icon-user"></i></span><span class="pcoded-mtext">Add Teacher</span></a>
+					</li>
+					<li class="nav-item pcoded-hasmenu">
+						<a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-layout"></i></span><span class="pcoded-mtext">View Teacher</span></a>
+						<ul class="pcoded-submenu">
+							<li><a href="/teacher/activeTeacher">Active Teacher</a></li>
+							<li><a href="/teacher/deactiveTeacher">Deactive Teacher</a></li>
+						</ul>
+					</li>
+
+					<li class="nav-item pcoded-menu-caption mt-0">
+						<label>Student</label>
+					</li>
+					<li class="nav-item">
+						<a href="/student/insertStudent" class="nav-link "><span class="pcoded-micon"><i class="feather icon-user"></i></span><span class="pcoded-mtext">Add Student</span></a>
+					</li>
+					<li class="nav-item pcoded-hasmenu">
+						<a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-layout"></i></span><span class="pcoded-mtext">View Student</span></a>
+						<ul class="pcoded-submenu">
+							<li><a href="/student/activeStudent">Active Student</a></li>
+							<li><a href="/student/deactiveStudent">Deactive Student</a></li>
+						</ul>
+					</li>
+
+					
+				</ul>
+				
+			</div>
+		</div>
+	</nav>
+	<!-- [ navigation menu ] end -->
+	<!-- [ Header ] start -->
+	<header class="navbar pcoded-header navbar-expand-lg navbar-light" style="background-color: lightblue;">
+				<div class="m-header">
+					<a class="mobile-menu" id="mobile-collapse" href="#!"><span></span></a>
+					<a href="/" class="b-brand">
+						<!-- ========   change your logo hear   ============ -->
+						<img src="/images/logo.png" alt="" class="logo">
+						<img src="/images/logo-icon.png" alt="" class="logo-thumb">
+					</a>
+					<a href="#!" class="mob-toggler">
+						<i class="feather icon-more-vertical"></i>
+					</a>
+				</div>
+				<div class="collapse navbar-collapse">
+					<ul class="navbar-nav ml-auto">
+						<li>
+							<div class="dropdown drp-user" style="margin-top: 15px;">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+									<i class="feather icon-user"></i>
+								</a>
+								<div class="dropdown-menu dropdown-menu-right profile-notification">
+									<div class="pro-head">
+										<img src="/images/user/avatar-1.jpg" class="img-radius" alt="User-Profile-Image">
+										<span></span>
+										<a href="/logOut" class="dud-logout" title="Logout">
+											<i class="feather icon-log-out"></i>
+										</a>
+									</div>
+									<ul class="pro-body">
+										<li><a href="/loginViewProfile" class="dropdown-item"><i class="feather icon-user"></i> Profile</a></li>
+										<li><a href="/changePass" class="dropdown-item"><i class="feather icon-mail"></i>Change Password</a></li>
+									</ul>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+	</header>
+	
+	

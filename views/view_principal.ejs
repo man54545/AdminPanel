@@ -1,0 +1,46 @@
+<%- include('header'); %>
+
+<section class="pcoded-main-container">
+    <div class="p-4">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Principal</h5>
+                        <span class="d-block m-t-5">use class <code>table-striped</code> inside table element</span>
+                    </div>
+                    <div class="card-body table-border-style">
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Phone</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% var j = 1; for(var i of principal) { %>
+                                    <tr>
+                                        <td><%= j++ %></td>
+                                        <td><%= i.name %></td>
+                                        <td><%= i.email %></td>
+                                        <td><%= i.phone %></td>
+                                        <td><a href="/principal/deleteData/<%= i.id %>"><i class="feather icon-trash"></i></a> || 
+                                            <a href="/principal/updateData/<%= i.id %>"><i class="feather icon-edit"></i></a></td>
+                                    </tr>
+                                    <% } %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<%- include('footer'); %>

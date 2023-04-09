@@ -1,0 +1,30 @@
+<%- include('header') %>
+
+<section class="pcoded-main-container p-5">
+    <div >
+        <!-- [ breadcrumb ] start -->
+     
+        <div class="row">
+            <div class="col-lg-12">
+                <form action="/hod/MailData/id" method="post">
+                    <input type="hidden" name="id" value="<%= id %>">
+                    <div class="form-floating d-flex align-items-center">
+                        <label class="floatingInput mb-0" style="margin-right: 20px;">Enter Topic :-</label>
+                        <input type="text" class="form-control border-0" style="box-shadow: none; width: 30%;" placeholder="Topic" name="topic">
+                    </div><br>
+                    <div class="form-floating d-flex align-items-center">
+                        <label class="floatingInput mb-0" style="margin-right: 20px;">Enter Description :-</label>
+                        <textarea class="form-control border-0" style="box-shadow: none; width: 40%; height: 130px;" name="description" placeholder="Description"></textarea>
+                    </div><br>
+                    <div class="form-floating d-flex align-items-center">
+                        <label class="floatingInput mb-0" style="margin-right: 20px;">Enter Online link :-</label>
+                        <input type="text" class="form-control border-0" style="box-shadow: none; width: 30%;" placeholder="Any link (Ex :- img)" name="file">
+                    </div><br>
+                    <input type="submit" value="Submit" class="btn btn-primary px-4">
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<%- include('footer') %>

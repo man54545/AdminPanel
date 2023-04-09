@@ -1,0 +1,45 @@
+<%- include('header') %>
+
+<section class="pcoded-main-container p-5">
+    <div >
+        <!-- [ breadcrumb ] start -->
+     
+        <div class="row">
+            <div class="col-lg-12">
+                <form action="/principal/editData" method="post">
+                    <input type="hidden" name="editId" value="<%= principal.id %>">
+                    <div class="form-floating d-flex align-items-center">
+                        <label class="floatingInput mb-0" style="margin-right: 20px;">Enter Your Name :-</label>
+                        <input type="text" class="form-control border-0" value="<%= principal.name %>" style="box-shadow: none; width: 30%;" placeholder="Name" name="name">
+                    </div><br>
+                    <div class="form-floating d-flex align-items-center">
+                        <label class="floatingInput mb-0" style="margin-right: 20px;">Enter Your Email :-</label>
+                        <input type="email" class="form-control border-0" value="<%= principal.email %>" style="box-shadow: none; width: 30%;" placeholder="E-mail" name="email">
+                    </div><br>
+                    <div class="form-floating d-flex align-items-center">
+                        <label class="floatingInput mb-0" style="margin-right: 20px;">Enter Your Password :-</label>
+                        <input type="password" class="form-control border-0" value="<%= principal.password %>" style="box-shadow: none; width: 30%;" placeholder="Password" name="password">
+                    </div><br>
+                    <div class="form-floating d-flex align-items-center">
+                        <label class="floatingInput mb-0" style="margin-right: 20px;">Select Your Gender :-</label>
+                        <input type="radio" name="gender" value="male" <% if(principal.gender == "male") { %> <%= "checked" %> <% } %>>Male
+                        <input type="radio" name="gender" value="female" <% if(principal.gender == "female") { %> <%= "checked" %> <% } %>>Female
+                    </div><br>
+                    <div class="form-floating d-flex align-items-center">
+                        <label class="floatingInput mb-0" style="margin-right: 20px;">Select Your Date of Birth :-</label>
+                        <input type="date" class="form-control border-0" value="<%= principal.dob %>" style="box-shadow: none; width: 30%;" name="dob">
+                    </div><br>
+                    <div class="form-floating d-flex align-items-center">
+                        <label class="floatingInput mb-0" style="margin-right: 20px;">Enter Your Phone :-</label>
+                        <input type="tel" class="form-control border-0" value="<%= principal.phone %>" style="box-shadow: none; width: 30%;" placeholder="Phone" name="phone">
+                    </div><br>
+                    <input type="submit" value="Edit" class="btn btn-primary px-4">
+                </form>
+            </div>
+        </div>
+        <!-- [ Main Content ] end -->
+
+    </div>
+</section>
+
+<%- include('footer') %>

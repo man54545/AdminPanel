@@ -1,0 +1,104 @@
+<%- include('header'); %>
+<style>
+    .pagination{
+        width: 80px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        transition: 0.4s all;
+        color: #4680FF;
+        background-color: #101b33;
+    }
+    .pagination:hover{
+        background-color: #4680FF;
+        color: #101b33;
+    }
+    .form-group .floating-label {
+        position: absolute;
+        top: 8px;
+        left: 28px;
+        font-size: 0.875rem;
+        z-index: 1;
+        cursor: text;
+        transition: all 0.3s ease;
+    }
+</style>
+
+<section class="pcoded-main-container">
+    <div class="p-4">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <div>
+                            <h5>Active Student</h5>
+                            <span class="d-block m-t-5">use class <code>table-striped</code> inside table element</span>
+                        </div>
+                        <% if(count > 1 || search != '') { %>
+                            <form class="mb-0 d-flex col-5 justify-content-center align-items-center">
+                                <div class="form-group mb-0 col-9">
+                                    <label class="floating-label" for="Email">Student name</label>
+                                    <input type="text" class="form-control" name="search" placeholder="">
+                                </div>
+                                <input type="submit" name="submit" class="btn btn-block btn-primary" value="Search">
+                            </form>
+                        <% } %>
+                    </div>
+                    <div class="card-body table-border-style">
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Avatar</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Phone</th>
+                                        <th>Date of birth</th>
+                                        <th>12th per.</th>
+                                        <th>Class Teacher</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% var j = 1; for(var i of deactive) { %>
+                                    <tr>
+                                        <td><%= j++ %></td>
+                                        <td><img src="<%= i.avatar %>" width="200px" height="200px" style="background-size: cover;object-fit: cover; background-position: top;"></td>
+                                        <td><a href="/viewProfile/?studentId=<%= i.id %>&teacherId="><%= i.name %></a></td>
+                                        <td><%= i.email %></td>
+                                        <td><%= i.phone %></td>
+                                        <td><%= i.dob %></td>
+                                        <td><%= i.per %></td>
+                                        <td><%= i.teacherId.name %></td>
+                                        <td><a href="/student/Active/<%= i.id %>">Active</a></td>
+                                        <td><a href="/student/deleteData/<%= i.id %>"><i class="feather icon-trash"></i></a> || 
+                                            <a href="/student/updateData/<%= i.id %>"><i class="feather icon-edit"></i></a></td>
+                                    </tr>
+                                    <% } %>
+                                </tbody>
+                            </table>
+                            <% if(count > per_page) { %>
+                                <div class="d-flex justify-content-center">
+                                    <% if(prev >= 1) { %>
+                                    <a href="?page=<%= prev %>&search=<%= search %>" class="pagination">Prev</a>
+                                    <% } %>
+                                    <!-- <a href="?page=<%= curr %>&search=<%= search %>" class="pagination"><%= curr %></a> -->
+                                    <% if(next <= total) { %>
+                                    <a href="?page=<%= next %>&search=<%= search %>" class="pagination">Next</a>
+                                    <% } %>
+                                </div>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<%- include('footer'); %>
