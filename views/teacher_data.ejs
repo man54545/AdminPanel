@@ -1,0 +1,182 @@
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/web/css/bootstrap.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="/web/css/animate.css">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="/web/css/owl.carousel.min.css">
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="/web/css/themify-icons.css">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="/web/css/flaticon.css">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="/web/css/magnific-popup.css">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="/web/css/slick.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="/web/css/style.css">
+
+
+
+    <header class="main_menu home_menu">
+      <div class="container">
+          <div class="row align-items-center">
+              <div class="col-lg-12">
+                  <nav class="navbar navbar-expand-lg navbar-light">
+                      <a class="navbar-brand" href=""> <img src="/web/img/logo.png" alt="logo"> </a>
+                      <button class="navbar-toggler" type="button" data-toggle="collapse"
+                          data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                          aria-expanded="false" aria-label="Toggle navigation">
+                          <span class="navbar-toggler-icon"></span>
+                      </button>
+
+                      <div class="collapse navbar-collapse main-menu-item justify-content-end"
+                          id="navbarSupportedContent">
+                          <ul class="navbar-nav align-items-center">
+                              <li class="nav-item active">
+                                  <a class="nav-link" href="">Home</a>
+                              </li>
+                              <li class="nav-item">
+                                  <a class="nav-link" href="">About</a>
+                              </li>
+                              <li class="nav-item">
+                                  <a class="nav-link" href="">Courses</a>
+                              </li>
+                              <li class="nav-item">
+                                  <a class="nav-link" href="">Blog</a>
+                              </li>
+                              <li class="nav-item dropdown">
+                                  <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      Pages
+                                  </a>
+                                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                      <a class="dropdown-item" href="">Single blog</a>
+                                      <a class="dropdown-item" href="">Elements</a>
+                                  </div>
+                              </li>
+                              <li class="nav-item">
+                                  <a class="nav-link" href="">Contact</a>
+                              </li>
+                              <li class="d-none d-lg-block">
+                                  <a class="btn_1" href="/login">Login</a>
+                              </li>
+                          </ul>
+                      </div>
+                  </nav>
+              </div>
+          </div>
+      </div>
+  </header>
+  <!-- Header part end-->
+
+<div class="py-5">
+  <div class="container">
+    <div class="heading text-center pt-4">
+      <h2 class="py-5"><%= hod.department %></h2>
+    </div>
+    <div class="special_cource">
+      <div class="row">
+        <% for(var i of teacher) {  %>
+          <div class="col-sm-6 col-lg-4">
+            <div class="single_special_cource py-3">
+                <img src="<%= i.avatar %>" class="special_img w-100">
+                <div class="special_cource_text">
+                    <a href="course-details.html"><h3 class="mt-0"><%= i.subject %></h3></a>
+                    <p>Which whose darkness saying were life unto fish wherein all fish of together called</p>
+                    <h4>- <%= i.name %></h4>
+                </div>
+            </div>
+          </div>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<footer class="footer-area">
+  <div class="container">
+      <div class="row justify-content-between">
+          <div class="col-sm-6 col-md-4 col-xl-3">
+              <div class="single-footer-widget footer_1">
+                  <a href=""> <img src="/web/img/logo.png" alt=""> </a>
+                  <p>But when shot real her. Chamber her one visite removal six
+                      sending himself boys scot exquisite existend an </p>
+                  <p>But when shot real her hamber her </p>
+              </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-xl-4">
+              <div class="single-footer-widget footer_2">
+                  <h4>Newsletter</h4>
+                  <p>Stay updated with our latest trends Seed heaven so said place winged over given forth fruit.
+                  </p>
+                  <form action="#">
+                      <div class="form-group">
+                          <div class="input-group mb-3">
+                              <input type="text" class="form-control" placeholder='Enter email address'
+                                  onfocus="this.placeholder = ''"
+                                  onblur="this.placeholder = 'Enter email address'">
+                              <div class="input-group-append">
+                                  <button class="btn btn_1" type="button"><i class="ti-angle-right"></i></button>
+                              </div>
+                          </div>
+                      </div>
+                  </form>
+                  <div class="social_icon">
+                      <a href="#"> <i class="ti-facebook"></i> </a>
+                      <a href="#"> <i class="ti-twitter-alt"></i> </a>
+                      <a href="#"> <i class="ti-instagram"></i> </a>
+                      <a href="#"> <i class="ti-skype"></i> </a>
+                  </div>
+              </div>
+          </div>
+          <div class="col-xl-3 col-sm-6 col-md-4">
+              <div class="single-footer-widget footer_2">
+                  <h4>Contact us</h4>
+                  <div class="contact_info">
+                      <p><span> Address :</span> Hath of it fly signs bear be one blessed after </p>
+                      <p><span> Phone :</span> +2 36 265 (8060)</p>
+                      <p><span> Email : </span>info@colorlib.com </p>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+  </div>
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-lg-12">
+              <div class="copyright_part_text text-center">
+                  <div class="row">
+                      <div class="col-lg-12">
+                          <p class="footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</footer>
+
+
+<script src="/web/js/jquery-1.12.1.min.js"></script>
+    <!-- popper js -->
+    <script src="/web/js/popper.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="/web/js/bootstrap.min.js"></script>
+    <!-- easing js -->
+    <script src="/web/js/jquery.magnific-popup.js"></script>
+    <!-- swiper js -->
+    <script src="/web/js/swiper.min.js"></script>
+    <!-- swiper js -->
+    <script src="/web/js/masonry.pkgd.js"></script>
+    <!-- particles js -->
+    <script src="/web/js/owl.carousel.min.js"></script>
+    <script src="/web/js/jquery.nice-select.min.js"></script>
+    <!-- swiper js -->
+    <script src="/web/js/slick.min.js"></script>
+    <script src="/web/js/jquery.counterup.min.js"></script>
+    <script src="/web/js/waypoints.min.js"></script>
+    <!-- custom js -->
+    <script src="/web/js/custom.js"></script>

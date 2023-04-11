@@ -2,9 +2,17 @@ const principal = require('../models/principal');
 const hod = require('../models/hod');
 const teacher = require('../models/teacher');
 const student = require('../models/student');
-var passport = require('passport');
 var nodeMailer = require('nodemailer');
-const { setDriver } = require('mongoose');
+
+module.exports.Main = async (req,res) => {
+    var data = await hod.find({status : true});
+    var data2 = await teacher.find({status : true});
+    return res.render('main', { 
+        hod : data,
+        teacher : data2,
+        user : req.user
+    });
+}
 
 module.exports.Dashboard = async (req,res) => {
     var hodData = await hod.count();
@@ -39,22 +47,22 @@ module.exports.registerProcess = async (req,res) => {
 
 module.exports.login = (req,res) => {
     if(req.isAuthenticated()){
-        return res.redirect('/');
+        return res.redirect('/Dashboard');
     }
     return res.render('login');
 }
 
-module.exports.loginProcess = async (req,res) => {
-    var hodData = await hod.count();
-    var teacherData = await teacher.count();
-    var studentData = await student.count();
-    return res.render('dashboard', {
-        data : req.user,
-        hod : hodData,
-        teacher : teacherData,
-        student : studentData,
-    });
-}
+// module.exports.loginProcess = async (req,res) => {
+//     var hodData = await hod.count();
+//     var teacherData = await teacher.count();
+//     var studentData = await student.count();
+//     return res.render('dashboard', {
+//         data : req.user,
+//         hod : hodData,
+//         teacher : teacherData,
+//         student : studentData,
+//     });
+// }
 
 module.exports.viewProfile = async (req,res) => {
     if(req.query.teacherId){
@@ -176,4 +184,28 @@ module.exports.newPass = async (req,res) => {
             return res.redirect('back');
         }
     }
+}
+
+// module.exports.loginStudent = async (req,res) => {
+//     return res.render('login_student');
+// }
+
+// module.exports.loginStu = async (req,res) => {
+//     var data = await student.findOne({email : req.body.email});
+//     if(data){
+//         res.cookie('std',data);
+//         return res.redirect('/');
+//     }
+//     else {
+//         return res.redirect('back');
+//     }
+// }
+
+module.exports.viewTeacherData = async (req,res) => {
+    var data1 = await hod.findById(req.params.id);
+    var data = await teacher.find({hodId : req.params.id}).populate('hodId').exec();
+    return res.render('teacher_data', { 
+        teacher : data,
+        hod : data1
+    });
 }

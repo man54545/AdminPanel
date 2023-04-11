@@ -2,23 +2,22 @@ const { urlencoded } = require('express');
 var express = require('express');
 var path = require('path');
 var port = 8081;
-// var db = require('./config/mongoose');
+var db = require('./config/mongoose');
 var passport = require('passport');
 var passpotLocal = require('./config/passport-local');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var mongoose = require('mongoose');
 
-var db='mongodb+srv://mansakadasariya:man@man.jbykfvz.mongodb.net/admin_panel'
-
-mongoose.connect(db, {
-    useNewUrlParser : true,
-    useUnifiedTopology : true
-}).then(()=> {
-    console.log("Db connected.");
-}).catch((err)=> {
-    console.log(err);
-});
+// var db='mongodb+srv://mansakadasariya:man@man.jbykfvz.mongodb.net/admin_panel'
+// mongoose.connect(db, {
+//     useNewUrlParser : true,
+//     useUnifiedTopology : true
+// }).then(()=> {
+//     console.log("Db connected.");
+// }).catch((err)=> {
+//     console.log(err);
+// });
 
 
 
