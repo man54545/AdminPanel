@@ -22,7 +22,5 @@
   "author": "",
   "license": "ISC",
   "description": "",
-  "engines": {
-    "node": "^18.14"
-  }
+  "engines": {"node": "^v18.15.0"}
 }
