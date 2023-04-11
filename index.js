@@ -7,9 +7,11 @@ var passport = require('passport');
 var passpotLocal = require('./config/passport-local');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
-
 var mongoose = require('mongoose');
-mongoose.connect("mongodb+srv://sakadasariyaman5:man54545@cluster0.gtj0epe.mongodb.net/AdminPanel", {
+
+var db='mongodb+srv://mansakadasariya:man@man.jbykfvz.mongodb.net/admin_panel'
+
+mongoose.connect(db, {
     useNewUrlParser : true,
     useUnifiedTopology : true
 }).then(()=> {
@@ -17,6 +19,8 @@ mongoose.connect("mongodb+srv://sakadasariyaman5:man54545@cluster0.gtj0epe.mongo
 }).catch((err)=> {
     console.log(err);
 });
+
+
 
 var app = express();
 
