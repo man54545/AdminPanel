@@ -135,7 +135,6 @@ module.exports.editData = async (req,res) => {
         }
         var imgPath = student.avatarPath+"/"+req.file.filename;
         req.body.avatar = imgPath;
-        req.body.status = true;
         var data = await student.findByIdAndUpdate(req.body.editId, req.body);
         if(data)
         {

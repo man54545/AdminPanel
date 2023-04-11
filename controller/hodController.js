@@ -75,8 +75,6 @@ module.exports.editData = async (req,res) => {
         }
         var imgPath = hod.avatarPath+"/"+req.file.filename;
         req.body.avatar = imgPath;
-        req.body.status = true;
-        console.log(req.body);
         var data = await hod.findByIdAndUpdate(req.body.editId, req.body);
         if(data)
         {
